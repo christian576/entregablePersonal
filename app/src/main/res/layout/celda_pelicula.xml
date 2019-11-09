@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:orientation="vertical">
+
+<!--    <TextView
+        android:layout_width="match_parent"
+        android:lauyout_height="match_parent"
+        android:gravity="center"
+        android:textColor="#FDFDFD"
+        android:id="@+id/CeldaNombreDePelicula"/>-->
+
+
+    <ImageView
+
+        android:id="@+id/imagenViewProducto"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center|left"
+        android:layout_marginRight="2dp" />
+
+</FrameLayout>
