@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical"
+    tools:context=".View.FragmentSomos">
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewVersionFragmentSomos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="40dp"
+        android:text="Versión: "
+        android:textColor="#D4BF00"
+        android:textSize="18dp"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCompilacionFragmentSomos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewVersionFragmentSomos"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="25dp"
+        android:text="Desarrollador: "
+        android:textColor="#FFEB3B"
+        android:textSize="18dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNroVersionFragmentSomos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@id/textViewVersionFragmentSomos"
+        android:text="25.0"
+        android:textColor="#707374"
+        android:textSize="18dp"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNroCompiFragmentSomos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewNroVersionFragmentSomos"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@id/textViewCompilacionFragmentSomos"
+        android:text="Lic. Christian F. Lopez"
+        android:textColor="#707374"
+        android:textSize="18dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDevelopersFragmentSomos"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_below="@id/textViewCompilacionFragmentSomos"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="58dp"
+        android:text="Historia/ mision y Valores"
+        android:textColor="#FFEB3B"
+        android:textSize="25dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNombre1FragmentSomos"
+        android:layout_width="372dp"
+        android:layout_height="82dp"
+        android:layout_below="@id/textViewNroCompiFragmentSomos"
+        android:layout_marginLeft="-301dp"
+        android:layout_marginTop="171dp"
+        android:layout_toRightOf="@id/textViewDevelopersFragmentSomos"
+        android:text="Somos una empresa dedicada a la venta de articulos. Nos focalizamos en la buena gestion y conectividad de nuestros usuarios."
+        android:textColor="#707374"
+        android:textSize="18dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNombre2FragmentSomos"
+        android:layout_width="376dp"
+        android:layout_height="153dp"
+        android:layout_below="@id/textViewNombre1FragmentSomos"
+        android:layout_marginLeft="-300dp"
+        android:layout_marginTop="31dp"
+        android:layout_toRightOf="@id/textViewDevelopersFragmentSomos"
+        android:text="Nuestros objetivos principales se basan en dar servicios de ventas en APPS. Optimizando tiempos, costos, y formas de pago."
+        android:textColor="#707374"
+        android:textSize="18dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNombre3FragmentSomos"
+        android:layout_width="371dp"
+        android:layout_height="157dp"
+        android:layout_below="@id/textViewNombre2FragmentSomos"
+        android:layout_marginLeft="-298dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@id/textViewDevelopersFragmentSomos"
+        android:text="Nuestros valores hacen referencia la innovacion tecnologica, el compañerismo y el compromiso por el bien comun."
+        android:textColor="#707374"
+        android:textSize="18dp" />
+
+</RelativeLayout>

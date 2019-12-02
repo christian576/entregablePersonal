@@ -7,8 +7,34 @@
     android:orientation="vertical"
     tools:context=".View.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ToolBarActivityMain"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#D3B319"
+
+        />
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 <FrameLayout
     android:id="@+id/ContenedorDelMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_gravity = "start"
+        app:menu="@menu/menu_bottom"
+        app:headerLayout="@layout/header_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 </LinearLayout>

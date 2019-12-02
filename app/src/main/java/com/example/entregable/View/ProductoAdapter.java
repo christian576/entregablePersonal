@@ -59,10 +59,13 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
     public class ProductoViewHolder extends RecyclerView.ViewHolder {
         private TextView textViewProducto;
         private ImageView imageViewProducto;
+        private  TextView textViewPrecio;
 
         public ProductoViewHolder(@NonNull View itemView) {
             super(itemView);
             imageViewProducto = itemView.findViewById(R.id.imagenViewProducto);
+            textViewProducto = itemView.findViewById(R.id.NombreProducto);
+            textViewPrecio = itemView.findViewById(R.id.PrecioProducto);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -77,6 +80,8 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
 
         public void cargarImagen(Producto producto) {
             Glide.with(imageViewProducto.getContext()).load(producto.getUrlImagen()).placeholder(R.drawable.loading).into(imageViewProducto);
+            textViewProducto.setText(producto.getNombreProducto());
+           // textViewPrecio.setText(producto.getPrecioProducto());
         }
     }
 
