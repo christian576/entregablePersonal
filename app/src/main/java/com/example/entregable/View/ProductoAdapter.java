@@ -59,7 +59,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
     public class ProductoViewHolder extends RecyclerView.ViewHolder {
         private TextView textViewProducto;
         private ImageView imageViewProducto;
-        private  TextView textViewPrecio;
+        private TextView textViewPrecio;
 
         public ProductoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -81,7 +81,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         public void cargarImagen(Producto producto) {
             Glide.with(imageViewProducto.getContext()).load(producto.getUrlImagen()).placeholder(R.drawable.loading).into(imageViewProducto);
             textViewProducto.setText(producto.getNombreProducto());
-           // textViewPrecio.setText(producto.getPrecioProducto());
+            textViewPrecio.setText("U$S " + producto.getPrecioProducto().toString());
         }
     }
 

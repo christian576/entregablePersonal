@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editTextFragmentLoginUsuario"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="#FFF"
+        android:gravity="center"
+        android:hint="User"
+        android:textColorHint="#000"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextFragmentLoginPassword"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#FFF"
+        android:gravity="center"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="#000"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/ButtonLoginFragmentRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="#853203"
+        android:text="REGISTRAR"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/ButtonLoginFragmentIngresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#853203"
+        android:text="INGRESAR"
+        android:textSize="15dp" />
+
+</LinearLayout>

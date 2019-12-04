@@ -18,6 +18,7 @@ import com.example.entregable.Model.Producto;
 import com.example.entregable.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements FragmentListaProductos.ListenerDelFragment, NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,15 +26,18 @@ public class MainActivity extends AppCompatActivity implements FragmentListaProd
     private NavigationView navigationView;
     private Toolbar toolbar;
 
+    public static final String CLAVE_LOGIN = "clave_login";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigationView);
         toolbar = findViewById(R.id.ToolBarActivityMain);
         pegarFragment(new FragmentListaProductos());
-//        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
 
         ActionBarDrawerToggle toggle =
@@ -83,6 +87,12 @@ public class MainActivity extends AppCompatActivity implements FragmentListaProd
                 drawerLayout.closeDrawers();
                 break;
 
+            case R.id.menuPrincipal_logout:
+
+                FirebaseAuth.getInstance();
+                cambiarDeActivity();
+                break;
+
         }
         drawerLayout.closeDrawers();
         return true;
@@ -93,5 +103,14 @@ public class MainActivity extends AppCompatActivity implements FragmentListaProd
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    private void cambiarDeActivity() {
+        String username = null;
+        Intent intent = new Intent(this, Login.class);
+        Bundle bundle = new Bundle();
+        bundle.putString(Login.CLAVE, username);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

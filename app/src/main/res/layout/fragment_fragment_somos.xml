@@ -74,8 +74,8 @@
         android:layout_width="372dp"
         android:layout_height="82dp"
         android:layout_below="@id/textViewNroCompiFragmentSomos"
-        android:layout_marginLeft="-301dp"
-        android:layout_marginTop="171dp"
+        android:layout_marginLeft="-307dp"
+        android:layout_marginTop="137dp"
         android:layout_toRightOf="@id/textViewDevelopersFragmentSomos"
         android:text="Somos una empresa dedicada a la venta de articulos. Nos focalizamos en la buena gestion y conectividad de nuestros usuarios."
         android:textColor="#707374"
@@ -86,8 +86,8 @@
         android:layout_width="376dp"
         android:layout_height="153dp"
         android:layout_below="@id/textViewNombre1FragmentSomos"
-        android:layout_marginLeft="-300dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginLeft="-308dp"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/textViewDevelopersFragmentSomos"
         android:text="Nuestros objetivos principales se basan en dar servicios de ventas en APPS. Optimizando tiempos, costos, y formas de pago."
         android:textColor="#707374"
@@ -98,11 +98,12 @@
         android:layout_width="371dp"
         android:layout_height="157dp"
         android:layout_below="@id/textViewNombre2FragmentSomos"
-        android:layout_marginLeft="-298dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginLeft="-310dp"
+        android:layout_marginTop="2dp"
         android:layout_toRightOf="@id/textViewDevelopersFragmentSomos"
         android:text="Nuestros valores hacen referencia la innovacion tecnologica, el compañerismo y el compromiso por el bien comun."
         android:textColor="#707374"
         android:textSize="18dp" />
+
 
 </RelativeLayout>
