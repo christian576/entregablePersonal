@@ -5,7 +5,7 @@ import retrofit2.http.GET;
 
 public interface ProductoService {
 
-    @GET("/sites/MLA/search?q=perros")
+    @GET("/sites/MLA/search?q=motos")
     Call<ContainerProductos>traerListaDeProductosPerros();
 
 
