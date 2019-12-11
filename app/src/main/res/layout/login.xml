@@ -14,6 +14,7 @@
         android:gravity="center"
         android:hint="User"
         android:textColorHint="#000"
+        android:textColor="#000"
         android:textStyle="bold" />
 
     <EditText

@@ -5,6 +5,8 @@
             android:id="@+id/menuPrincipal_Home"></item>
         <item android:title="About Us"
             android:id="@+id/menuPrincipal_acerca_mercado"></item>
+        <item android:title="Settings User"
+            android:id="@+id/Settings"></item>
         <item android:title="Log Out"
             android:id="@+id/menuPrincipal_logout"></item>
 

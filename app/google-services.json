@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "41170065352",
-    "firebase_url": "https://entregable-53441.firebaseio.com",
-    "project_id": "entregable-53441",
-    "storage_bucket": "entregable-53441.appspot.com"
+    "project_number": "6998957694",
+    "firebase_url": "https://mercadoesclavoch.firebaseio.com",
+    "project_id": "mercadoesclavoch",
+    "storage_bucket": "mercadoesclavoch.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:41170065352:android:5c05c647d757e7764f12fd",
+        "mobilesdk_app_id": "1:6998957694:android:724e04571bfa4440e9422f",
         "android_client_info": {
           "package_name": "com.example.entregable"
         }
       },
       "oauth_client": [
         {
-          "client_id": "41170065352-r3kljrl26nlendql47fhr7mkjan1ed2p.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.entregable",
-            "certificate_hash": "30a8138d89f54b073ea15bc5e286a5d4d376d8a6"
-          }
-        },
-        {
-          "client_id": "41170065352-c6d714ikpivaoh8dl6834vdb1b5s7pf4.apps.googleusercontent.com",
+          "client_id": "6998957694-lpeingui2glfh0s14k5e044k0fot8lp4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBMWx8H00F06N0D4UP3bNpV6i3prVzW3Ok"
+          "current_key": "AIzaSyD324ZDcydxwoCZIwHApLnn1cOE0H2Or_s"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "41170065352-c6d714ikpivaoh8dl6834vdb1b5s7pf4.apps.googleusercontent.com",
+              "client_id": "6998957694-lpeingui2glfh0s14k5e044k0fot8lp4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

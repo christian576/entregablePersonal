@@ -28,7 +28,7 @@ public class Login extends AppCompatActivity {
 
     private FirebaseFirestore firestore;
     private FirebaseUser currentUsuer;
-    public static final String CLAVE = "CLAVE";
+        public static final String CLAVE = "CLAVE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

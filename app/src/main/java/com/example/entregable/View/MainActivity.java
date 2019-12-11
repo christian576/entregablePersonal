@@ -89,9 +89,15 @@ public class MainActivity extends AppCompatActivity implements FragmentListaProd
 
             case R.id.menuPrincipal_logout:
 
-                FirebaseAuth.getInstance();
+                FirebaseAuth.getInstance().signOut();
                 cambiarDeActivity();
                 break;
+
+            case R.id.Settings:
+                cambiarASettings();
+                break;
+
+
 
         }
         drawerLayout.closeDrawers();
@@ -110,6 +116,15 @@ public class MainActivity extends AppCompatActivity implements FragmentListaProd
         Intent intent = new Intent(this, Login.class);
         Bundle bundle = new Bundle();
         bundle.putString(Login.CLAVE, username);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    private void cambiarASettings() {
+        String username = null;
+        Intent intent = new Intent(this, SettingsUser.class);
+        Bundle bundle = new Bundle();
+        bundle.putString(SettingsUser.CLAVE, username);
         intent.putExtras(bundle);
         startActivity(intent);
     }
