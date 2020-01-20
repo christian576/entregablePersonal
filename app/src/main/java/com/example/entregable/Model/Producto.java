@@ -3,6 +3,7 @@ package com.example.entregable.Model;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Producto implements Serializable {
 
@@ -13,10 +14,18 @@ public class Producto implements Serializable {
     @SerializedName("thumbnail")
     private String urlImagen;
 
-    public Producto(String nombreProducto, Integer precioProducto, String urlImagen) {
+    @SerializedName("id")
+    private String id;
+
+    @SerializedName("pictures")
+    private List<ProductoImagen> listImagenes;
+
+    public Producto(String nombreProducto, Integer precioProducto, String urlImagen, String id, List<ProductoImagen> imagenList ) {
         this.nombreProducto = nombreProducto;
         this.precioProducto = precioProducto;
         this.urlImagen = urlImagen;
+        this.id=id;
+        this.listImagenes = imagenList;
     }
 
     public String getNombreProducto() {
@@ -29,5 +38,12 @@ public class Producto implements Serializable {
 
     public String getUrlImagen() {
         return urlImagen;
+    }
+
+    public String getId() {
+        return id;
+    }
+    public List<ProductoImagen> getListImagenes() {
+        return listImagenes;
     }
 }

@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ProductoRetrofitDAO {
 
     private Retrofit retrofit;
-    protected ProductoService productoService;
+    protected ProductoService serviceRetro;
 
     public ProductoRetrofitDAO(String baseUrl){
         retrofit=new Retrofit.Builder()
@@ -14,6 +14,6 @@ public class ProductoRetrofitDAO {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        productoService= retrofit.create(ProductoService.class);
+        serviceRetro = retrofit.create(ProductoService.class);
     }
 }

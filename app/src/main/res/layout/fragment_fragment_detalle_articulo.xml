@@ -3,32 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".View.FragmentDetalleArticulo">
+    android:background="#000"
+    android:orientation="vertical">
+
 
     <TextView
+        android:id="@+id/TextViewNombreProducto"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:id="@+id/ArticuloTextViewTitulo"
+        android:hint="NOMBRE DEL PRODUCTO"
+        android:textColor="#0091EA"
+        android:textSize="25dp"
+        android:textStyle="italic" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:id="@+id/ImageViewPagerProductoDetalleFoto"
+        android:src="@drawable/loading"
         />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:src="@drawable/cargando"
-        android:id="@+id/ImageViewDetalleArticuloFoto"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/FloatingActionButtonFavoritos"
+        android:backgroundTint="#000"
+        android:layout_gravity="center|right"
         />
 
     <TextView
+        android:id="@+id/TextViewDetallePrecio"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_height="50dp"
         android:gravity="center"
-        android:id="@+id/DetalleArticuloTextView"
-        />
+        android:textColor="#0091EA"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/TextViewDetalleProductoDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:textColor="#0091EA"
+            android:textSize="18dp"
+
+            />
+    </ScrollView>
 
 </LinearLayout>
