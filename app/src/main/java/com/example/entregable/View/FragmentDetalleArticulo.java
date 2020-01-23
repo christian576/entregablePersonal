@@ -37,6 +37,7 @@ public class FragmentDetalleArticulo extends Fragment {
 
     public static final String CLAVE_ARTICULO = "CLAVE_ARTICULO";
 
+
     public static FragmentDetalleArticulo dameUnFragmentDetalleArticulo(Producto unProducto) {
         FragmentDetalleArticulo unFragmentDetalleArticulo = new FragmentDetalleArticulo();
 
@@ -61,20 +62,29 @@ public class FragmentDetalleArticulo extends Fragment {
 
         ProductoController productoController = new ProductoController();
 
-        unProducto = recepcionarProducto();
-        textViewArticuloNombre.setText(unProducto.getNombreProducto());
+        productoSeleccionado = recepcionarProducto();
+        textViewArticuloNombre.setText(productoSeleccionado.getNombreProducto());
+        cargarDatosDelProducto(productoSeleccionado);
 
-
+        productoController.traerProductoMedianteID(productoSeleccionado.getId(), new ResultListener<Producto>() {
+            @Override
+            public void finish(Producto result) {
+                productoSeleccionado = result;
+                AdapterViewPagerImagenDetalleProducto viewPagerAdapter = new AdapterViewPagerImagenDetalleProducto(getActivity().getSupportFragmentManager(), productoSeleccionado);
+                viewPagerImagenProducto.setAdapter(viewPagerAdapter);
+                //viewPagerImagenProducto.setAdapter(viewPagerAdapter);
+            }
+        });
         productoController.traerDetalleProductoMedianteID(productoSeleccionado.getId(), new ResultListener <List<Descripcion>>() {
             @Override
             public void finish(List<Descripcion> result) {
                 descripcionProducto.setText(result.get(0).getDescripcionProducto());
             }
         });
-         textViewArticuloDescprition.setText(unProducto.getPrecioProducto());
+//         textViewArticuloDescprition.setText(productoSeleccionado.getPrecioProducto());
 
 
-        CargarImagen(unProducto);
+        CargarImagen(productoSeleccionado);
 
 
         return vistaFragment;
@@ -83,6 +93,11 @@ public class FragmentDetalleArticulo extends Fragment {
     private void CargarImagen(Producto unProducto) {
 
     }
+    private void cargarDatosDelProducto(Producto producto) {
+        textViewArticuloNombre.setText(producto.getNombreProducto());
+
+    }
+
 
     private Producto recepcionarProducto() {
 
@@ -95,6 +110,7 @@ public class FragmentDetalleArticulo extends Fragment {
         textViewArticuloNombre = vistaFragment.findViewById(R.id.TextViewNombreProducto);
         //textViewArticuloDescprition = vistaFragment.findViewById(R.id.TextViewDetalleProductoDescripcion);
         descripcionProducto = vistaFragment.findViewById(R.id.TextViewDetalleProductoDescripcion);
+        viewPagerImagenProducto = vistaFragment.findViewById(R.id.ImageViewPagerProductoDetalleFoto);
 
     }
 
