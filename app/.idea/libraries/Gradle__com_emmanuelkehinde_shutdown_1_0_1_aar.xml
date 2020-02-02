@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.emmanuelkehinde:shutdown:1.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/689017610185d0cdf94f0971bdc3c80d/shutdown-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/689017610185d0cdf94f0971bdc3c80d/shutdown-1.0.1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.emmanuelkehinde/shutdown/1.0.1/89e26679d3ca44ee5e5b2a088d2fac2323edce40/shutdown-1.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.emmanuelkehinde/shutdown/1.0.1/43a2f9f6c63a3502065797bbc9d0c623ee146257/shutdown-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
