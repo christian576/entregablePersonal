@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
-        android:background="#853203"
+        android:background="#663AB6"
         android:text="REGISTRAR"
         android:textSize="15dp" />
 
@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="#853203"
+        android:background="#663AB6"
         android:text="INGRESAR"
         android:textSize="15dp" />
 

@@ -2,6 +2,7 @@ package com.example.entregable.Model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContainerProductos {
@@ -26,4 +27,21 @@ public class ContainerProductos {
     public void setUrlImagen(String urlImagen) {
         this.urlImagen = urlImagen;
     }
+
+    public ContainerProductos(){
+        productoList = new ArrayList<>();
+    }
+
+    public void agregarProducto(Producto producto){
+        productoList.add(producto);
+    }
+
+    public void quitarProducto(Producto producto){
+        productoList.remove(producto);
+    }
+
+    public Boolean contieneProducto (Producto producto){
+        return productoList.contains(producto);
+    }
+
 }

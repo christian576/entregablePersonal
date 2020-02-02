@@ -12,10 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:hint="NOMBRE DEL PRODUCTO"
-        android:textColor="#0091EA"
+        android:textColor="#E1F7FCF7"
         android:textSize="25dp"
         android:textStyle="italic" />
 
@@ -23,26 +23,26 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="215dp"
-        android:id="@+id/ImageViewPagerProductoDetalleFoto"
-        android:src="@drawable/loading"
+        android:id="@+id/ImageViewPagerProductoFoto"
+
         />
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/FloatingActionButtonFavoritos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/FloatingActionButtonFavoritos"
-        android:backgroundTint="#000"
         android:layout_gravity="center|right"
-        />
+        android:backgroundTint="#03A9F4" />
 
     <TextView
         android:id="@+id/TextViewDetallePrecio"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:textColor="#0091EA"
-        android:textSize="30dp"
-        android:textStyle="bold"/>
+        android:textColor="#E1F7FCF7"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:textColor="#0091EA"
+            android:textColor="#E1F7FCF7"
             android:textSize="18dp"
 
             />

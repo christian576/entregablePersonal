@@ -87,6 +87,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListaProd
                 drawerLayout.closeDrawers();
                 break;
 
+            case R.id.menuPrincipal_favoritos:
+                pegarFragment(new FragmentFavoritos());
+                break;
+
             case R.id.menuPrincipal_logout:
 
                 FirebaseAuth.getInstance().signOut();

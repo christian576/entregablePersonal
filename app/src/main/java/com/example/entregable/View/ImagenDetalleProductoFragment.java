@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.example.entregable.R;
 
-class ImagenDetalleProductoFragment extends Fragment {
+public class ImagenDetalleProductoFragment extends Fragment {
     public static final String IMAGEN_PRODUCTO = "CLAVE_IMAGEN_PRODUCTO";
     private ImageView imageView;
 

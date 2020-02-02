@@ -20,13 +20,13 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
     protected List<Producto> productoList;
     private ListenderDelAdapter listenerDelAdapter;
 
-    public ProductoAdapter(List<Producto> productoList) {
-        this.productoList = productoList;
+    public ProductoAdapter() {
+
 
     }
 
     public ProductoAdapter(ListenderDelAdapter listenerDelAdapter) {
-        this.productoList = new ArrayList<>();
+
         this.listenerDelAdapter = listenerDelAdapter;
     }
 
@@ -34,7 +34,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
     @Override
     public ProductoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflador = LayoutInflater.from(parent.getContext());
-        View view = inflador.inflate(R.layout.celda_pelicula, parent, false);
+        View view = inflador.inflate(R.layout.celda_producto, parent, false);
         ProductoViewHolder productoViewHolder = new ProductoViewHolder(view);
         return productoViewHolder;
     }

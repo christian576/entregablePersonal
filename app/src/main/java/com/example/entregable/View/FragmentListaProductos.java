@@ -42,7 +42,7 @@ public class FragmentListaProductos extends Fragment implements ProductoAdapter.
         View vistaDelFragment = inflater.inflate(R.layout.fragment_fragment_lista_productos,container,false);
         inflarVistas(vistaDelFragment);
 
-        final ProductoAdapter productoAdapter= new ProductoAdapter(this);
+        final ProductoAdapter productoAdapter= new ProductoAdapter();
         final ProductoController productoController = new ProductoController();
 
         productoController.traerProductos(new ResultListener<List<Producto>>() {

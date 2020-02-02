@@ -12,11 +12,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.entregable.Controller.FirestoreController;
 import com.example.entregable.Controller.ProductoController;
 import com.example.entregable.Model.Descripcion;
 import com.example.entregable.Model.Producto;
 import com.example.entregable.R;
 import com.example.entregable.Utils.ResultListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Text;
 
@@ -32,8 +34,11 @@ public class FragmentDetalleArticulo extends Fragment {
     private Producto unProducto;
     private TextView descripcionProducto;
     private ViewPager viewPagerImagenProducto;
-    private Producto productoSeleccionado;
     private FragmentListaProductos.ListenerDelFragment listenerDelFragment;
+    private TextView textViewArticuloPrecio;
+    private FloatingActionButton floatingActionButtonFavoritos;
+    private FirestoreController firestoreController;
+    private Boolean esFavorita;
 
     public static final String CLAVE_ARTICULO = "CLAVE_ARTICULO";
 
@@ -59,32 +64,79 @@ public class FragmentDetalleArticulo extends Fragment {
         View vistaFragment = inflater.inflate(R.layout.fragment_fragment_detalle_articulo, container, false);
         inflarVistas(vistaFragment);
 
+        firestoreController = new FirestoreController();
+
         ProductoController productoController = new ProductoController();
 
         unProducto = recepcionarProducto();
         textViewArticuloNombre.setText(unProducto.getNombreProducto());
+        textViewArticuloPrecio.setText("$ " + unProducto.getPrecioProducto().toString());
 
+        productoController.traerProductoMedianteID(unProducto.getId(), new ResultListener<Producto>() {
+            @Override
+            public void finish(Producto result) {
+                unProducto = result;
+                AdapterViewPagerImagenDetalleProducto viewPagerAdapter = new AdapterViewPagerImagenDetalleProducto(getActivity().getSupportFragmentManager(), unProducto);
+                viewPagerImagenProducto.setAdapter(viewPagerAdapter);
+            }
+        });
 
-        productoController.traerDetalleProductoMedianteID(productoSeleccionado.getId(), new ResultListener <List<Descripcion>>() {
+        productoController.traerDetalleProductoMedianteID(unProducto.getId(), new ResultListener <List<Descripcion>>() {
             @Override
             public void finish(List<Descripcion> result) {
                 descripcionProducto.setText(result.get(0).getDescripcionProducto());
             }
         });
-         textViewArticuloDescprition.setText(unProducto.getPrecioProducto());
 
+        floatingActionButtonFavoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firestoreController.agregarProductoAFav(unProducto);
+                esFavorita = !esFavorita;
+                actualizarFav();
+            }
+        });
 
-        CargarImagen(unProducto);
+        firestoreController.traerListaDeFavorito(new ResultListener<List<Producto>>() {
+            @Override
+            public void finish(List<Producto> result) {
+                esFavorita = result.contains(unProducto);
+                actualizarFav();
+                habilitarOnClickDeFavoritos();
+            }
+        });
+
+        floatingActionButtonFavoritos.setClickable(false);
+
+        return vistaFragment;
+    }
+
+    private void actualizarFav() {
+        if (esFavorita){
+            floatingActionButtonFavoritos.setImageResource(R.drawable.bien);
+        }else{
+            floatingActionButtonFavoritos.setImageResource(R.drawable.mal);
+        }
+    }
+
+    private void habilitarOnClickDeFavoritos(){
+        floatingActionButtonFavoritos.setClickable(true);
+    }
+
+     /*   CargarImagen(unProducto);
 
 
         return vistaFragment;
     }
+*/
+
+
 
     private void CargarImagen(Producto unProducto) {
 
     }
 
-    private Producto recepcionarProducto() {
+    private Producto  recepcionarProducto() {
 
         Bundle bundle = getArguments();
         Producto productoSeleccionado = (Producto) bundle.getSerializable(CLAVE_ARTICULO);
@@ -93,9 +145,29 @@ public class FragmentDetalleArticulo extends Fragment {
 
     private void inflarVistas(View vistaFragment) {
         textViewArticuloNombre = vistaFragment.findViewById(R.id.TextViewNombreProducto);
-        //textViewArticuloDescprition = vistaFragment.findViewById(R.id.TextViewDetalleProductoDescripcion);
+        textViewArticuloDescprition = vistaFragment.findViewById(R.id.TextViewDetalleProductoDescripcion);
         descripcionProducto = vistaFragment.findViewById(R.id.TextViewDetalleProductoDescripcion);
+        textViewArticuloPrecio = vistaFragment.findViewById(R.id.TextViewDetallePrecio);
+        viewPagerImagenProducto = vistaFragment.findViewById(R.id.ImageViewPagerProductoFoto);
+        floatingActionButtonFavoritos = vistaFragment.findViewById(R.id.FloatingActionButtonFavoritos);
 
+
+    }
+
+    private Producto traerProductoSeleccionado() {
+        Bundle bundle = getArguments();
+        Producto unProducto = (Producto) bundle.getSerializable(CLAVE_ARTICULO);
+
+        return unProducto;
+    }
+
+    public interface ListenerDelFragment{
+        void recibirProductoID(Producto producto);
+    }
+
+
+    public void informarProductoSeleccionado(Producto producto) {
+        listenerDelFragment.recibirProducto(producto);
     }
 
 }

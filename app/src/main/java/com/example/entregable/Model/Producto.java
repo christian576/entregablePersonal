@@ -20,6 +20,9 @@ public class Producto implements Serializable {
     @SerializedName("pictures")
     private List<ProductoImagen> listImagenes;
 
+    public Producto() {
+    }
+
     public Producto(String nombreProducto, Integer precioProducto, String urlImagen, String id, List<ProductoImagen> imagenList ) {
         this.nombreProducto = nombreProducto;
         this.precioProducto = precioProducto;
