@@ -42,7 +42,6 @@ public class FragmentDetalleArticulo extends Fragment {
 
     public static final String CLAVE_ARTICULO = "CLAVE_ARTICULO";
 
-
     public static FragmentDetalleArticulo dameUnFragmentDetalleArticulo(Producto unProducto) {
         FragmentDetalleArticulo unFragmentDetalleArticulo = new FragmentDetalleArticulo();
 
@@ -69,46 +68,18 @@ public class FragmentDetalleArticulo extends Fragment {
 
         ProductoController productoController = new ProductoController();
 
-<<<<<<< HEAD
         unProducto = recepcionarProducto();
         textViewArticuloNombre.setText(unProducto.getNombreProducto());
-        textViewArticuloPrecio.setText("$ " + unProducto.getPrecioProducto().toString());
 
-        productoController.traerProductoMedianteID(unProducto.getId(), new ResultListener<Producto>() {
-            @Override
-            public void finish(Producto result) {
-                unProducto = result;
-                AdapterViewPagerImagenDetalleProducto viewPagerAdapter = new AdapterViewPagerImagenDetalleProducto(getActivity().getSupportFragmentManager(), unProducto);
-                viewPagerImagenProducto.setAdapter(viewPagerAdapter);
-            }
-        });
 
         productoController.traerDetalleProductoMedianteID(unProducto.getId(), new ResultListener <List<Descripcion>>() {
-=======
-        productoSeleccionado = recepcionarProducto();
-        textViewArticuloNombre.setText(productoSeleccionado.getNombreProducto());
-        cargarDatosDelProducto(productoSeleccionado);
 
-        productoController.traerProductoMedianteID(productoSeleccionado.getId(), new ResultListener<Producto>() {
-            @Override
-            public void finish(Producto result) {
-                productoSeleccionado = result;
-                AdapterViewPagerImagenDetalleProducto viewPagerAdapter = new AdapterViewPagerImagenDetalleProducto(getActivity().getSupportFragmentManager(), productoSeleccionado);
-                viewPagerImagenProducto.setAdapter(viewPagerAdapter);
-                //viewPagerImagenProducto.setAdapter(viewPagerAdapter);
-            }
-        });
-        productoController.traerDetalleProductoMedianteID(productoSeleccionado.getId(), new ResultListener <List<Descripcion>>() {
->>>>>>> ad2c86f3d09fde1ea1865a2b25b59850c4ad4845
             @Override
             public void finish(List<Descripcion> result) {
                 descripcionProducto.setText(result.get(0).getDescripcionProducto());
             }
         });
-<<<<<<< HEAD
-=======
-//         textViewArticuloDescprition.setText(productoSeleccionado.getPrecioProducto());
->>>>>>> ad2c86f3d09fde1ea1865a2b25b59850c4ad4845
+         textViewArticuloDescprition.setText(unProducto.getPrecioProducto());
 
         floatingActionButtonFavoritos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,18 +90,7 @@ public class FragmentDetalleArticulo extends Fragment {
             }
         });
 
-<<<<<<< HEAD
-        firestoreController.traerListaDeFavorito(new ResultListener<List<Producto>>() {
-            @Override
-            public void finish(List<Producto> result) {
-                esFavorita = result.contains(unProducto);
-                actualizarFav();
-                habilitarOnClickDeFavoritos();
-            }
-        });
-=======
-        CargarImagen(productoSeleccionado);
->>>>>>> ad2c86f3d09fde1ea1865a2b25b59850c4ad4845
+        CargarImagen(unProducto);
 
         floatingActionButtonFavoritos.setClickable(false);
 
@@ -161,13 +121,8 @@ public class FragmentDetalleArticulo extends Fragment {
     private void CargarImagen(Producto unProducto) {
 
     }
-    private void cargarDatosDelProducto(Producto producto) {
-        textViewArticuloNombre.setText(producto.getNombreProducto());
 
-    }
-
-
-    private Producto  recepcionarProducto() {
+    private Producto recepcionarProducto() {
 
         Bundle bundle = getArguments();
         Producto productoSeleccionado = (Producto) bundle.getSerializable(CLAVE_ARTICULO);
@@ -178,31 +133,10 @@ public class FragmentDetalleArticulo extends Fragment {
         textViewArticuloNombre = vistaFragment.findViewById(R.id.TextViewNombreProducto);
         textViewArticuloDescprition = vistaFragment.findViewById(R.id.TextViewDetalleProductoDescripcion);
         descripcionProducto = vistaFragment.findViewById(R.id.TextViewDetalleProductoDescripcion);
-<<<<<<< HEAD
-        textViewArticuloPrecio = vistaFragment.findViewById(R.id.TextViewDetallePrecio);
-        viewPagerImagenProducto = vistaFragment.findViewById(R.id.ImageViewPagerProductoFoto);
-        floatingActionButtonFavoritos = vistaFragment.findViewById(R.id.FloatingActionButtonFavoritos);
-
 
     }
 
-    private Producto traerProductoSeleccionado() {
-        Bundle bundle = getArguments();
-        Producto unProducto = (Producto) bundle.getSerializable(CLAVE_ARTICULO);
-
-        return unProducto;
-    }
-
-    public interface ListenerDelFragment{
-        void recibirProductoID(Producto producto);
-    }
-
-=======
-        viewPagerImagenProducto = vistaFragment.findViewById(R.id.ImageViewPagerProductoDetalleFoto);
->>>>>>> ad2c86f3d09fde1ea1865a2b25b59850c4ad4845
-
-    public void informarProductoSeleccionado(Producto producto) {
+    public void informarProductoSeleccionado (Producto producto){
         listenerDelFragment.recibirProducto(producto);
     }
-
 }

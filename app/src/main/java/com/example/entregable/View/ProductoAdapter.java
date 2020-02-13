@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ProductoViewHolder> {
-    protected List<Producto> productoList;
+    protected List<Producto> productoList = new ArrayList<>();
     private ListenderDelAdapter listenerDelAdapter;
 
     public ProductoAdapter() {
